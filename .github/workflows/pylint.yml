@@ -1,0 +1,56 @@
+name: Run On HyperX With Build
+on:
+  workflow_dispatch:
+    inputs:
+      username:
+        required: true
+        description: LT Username
+      accessKey:
+        description: LT Access Key
+        required: true
+      build:
+        description: LT Build
+        required: true
+      email:
+        required: true
+        description: LT singup mail
+      password:
+        required: false
+        description: LT signup password
+      
+      sampleRepoLink:
+        required: false
+        default: https://github.com/ritamganguli/standard_hyperx_demo.git
+        description: Link to the HyperExecute sample repo
+
+jobs:
+  HyperExecute-Selenium:
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest]
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v2
+
+      - name: Starting CLI testing
+        id: testng
+        shell: bash
+        run: |
+          echo "STEP 1 ) Downloading sample suite"
+          git clone ${{ github.event.inputs.sampleRepoLink }}
+          echo "STEP 2) Download CLI and setting environment variables"
+          cd standard_hyperx_demo
+          curl https://downloads.lambdatest.com/hyperexecute/windows/hyperexecute.exe -o hyperexecute.exe
+          export LT_USERNAME=${{ github.event.inputs.username }}
+          export LT_ACCESS_KEY=${{ github.event.inputs.accessKey }}
+          export LT_BUILD_NAME=${{ github.event.inputs.build }}
+          export sign_in_mail=${{ github.event.inputs.email }}
+          export password=${{ github.event.inputs.password }}
+          echo $LT_BUILD_NAME
+          echo $LT_USERNAME
+          echo $LT_ACCESS_KEY
+          ./hyperexecute --user $LT_USERNAME --key $LT_ACCESS_KEY --config testrunner.yaml
