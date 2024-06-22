@@ -25,7 +25,7 @@ on:
         description: Link to the HyperExecute sample repo
 
 jobs:
-  HyperExecute-Selenium:
+  Standard-Selenium:
     runs-on: ${{ matrix.os }}
     timeout-minutes: 60
     strategy:
