@@ -1,0 +1,37 @@
+---
+version: 0.1
+globalTimeout: 90
+testSuiteTimeout: 90
+testSuiteStep: 90
+
+runson: win
+
+autosplit: true
+
+concurrency: 1
+
+runtime:
+  language: python 
+  version: "3.9"
+
+env:
+#  PAT: ${{ .secrets.testKey }}
+ TARGET_OS: Windows 11
+ LT_BUILD_NAME: ${LT_BUILD_NAME}
+ sign_in_mail: ${email}
+ password: ${password}
+
+cacheKey: '{{ checksum "requirements.txt" }}'
+cacheDirectories:
+  - CacheDir
+pre:
+  - pip3 install -r requirements.txt --cache-dir CacheDir
+
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: echo lambdatest.py
+
+testRunnerCommand: python3 $test
+
+jobLabel: [selenium-python, win, autosplit]
