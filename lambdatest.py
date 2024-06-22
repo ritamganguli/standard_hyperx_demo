@@ -9,6 +9,7 @@ username = os.getenv("LT_USERNAME")  # Replace the username
 access_key = os.getenv("LT_ACCESS_KEY")  # Replace the access key
 sign_in_mail=os.getenv("sign_in_mail")
 password=os.getenv("password")
+build=os.getenv("LT_BUILD_NAME")
 
 # username = "shubhamr"  # Replace the username
 # access_key = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"  # Replace the access key
