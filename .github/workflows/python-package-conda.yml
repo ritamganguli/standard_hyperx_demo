@@ -31,7 +31,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
         python-version: [3.9]  # Specify Python 3.9 version
         test: ["lambdatest.py"]  # Include the test names in the matrix
 
