@@ -36,7 +36,7 @@ pre:
 testDiscovery:
   type: raw
   mode: dynamic
-  command: echo lambdatest.py
+  command: echo lambdatest1.py
 
 testRunnerCommand: python3 $test
 
