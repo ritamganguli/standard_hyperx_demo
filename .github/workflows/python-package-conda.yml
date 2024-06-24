@@ -51,6 +51,7 @@ jobs:
           echo "STEP 1 ) Running up the python snippet over standard"
           git clone ${{ github.event.inputs.sampleRepoLink }}
           cd standard_hyperx_demo
+          pip3 install -r requirements.txt
           export LT_USERNAME=${{ github.event.inputs.username }}
           export LT_ACCESS_KEY=${{ github.event.inputs.accessKey }}
           export LT_BUILD_NAME=${{ github.event.inputs.build }}
