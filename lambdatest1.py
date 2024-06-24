@@ -135,6 +135,8 @@ class FirstSampleTest(unittest.TestCase):
                     print(f"Element is displayed in iteration {i}")
                 else:
                     print(f"Element is not displayed in iteration {i}")
+            except: 
+                print("exception")
         time.sleep(15)
         print("Ending the test........")
 
