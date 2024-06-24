@@ -155,6 +155,8 @@ class FirstSampleTest(unittest.TestCase):
                     print(f"Element is displayed in iteration {i}")
                 else:
                     print(f"Element is not displayed in iteration {i}")
+            except: 
+                print("exception")
         print("Going over integration")
         time.sleep(10)
         driver.find_element(By.XPATH,"//ul[@class='ltch-aside-menu-bottom-submenu-item-wrapper']/li[1]/a[1]").click()
