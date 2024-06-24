@@ -53,12 +53,9 @@ class FirstSampleTest(unittest.TestCase):
         time.sleep(15)  # Wait for the page to load
 
         print("Entering Mail To Log in")
-        self.wait.until(EC.presence_of_element_located((By.ID, "email")))
-        driver.execute_script("document.getElementById('email').value = arguments[0];", sign_in_mail)
-        time.sleep(7)
+        self.wait.until(EC.presence_of_element_located((By.ID, "email"))).send_keys(sign_in_mail)
         print("Entering Password")
-        self.wait.until(EC.presence_of_element_located((By.ID, "password")))
-        driver.execute_script("document.getElementById('password').value = arguments[0];", password)
+        self.wait.until(EC.presence_of_element_located((By.ID, "password"))).send_keys(password)
         time.sleep(7)
         self.wait.until(EC.element_to_be_clickable((By.ID, "login-button")))
         driver.execute_script("document.getElementById('login-button').click();")
