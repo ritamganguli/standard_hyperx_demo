@@ -128,6 +128,13 @@ class FirstSampleTest(unittest.TestCase):
         print("Going over integration")
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[@class='aside__menu__bottom__submenu__item__icon'])[3]"))).click()
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//ul[@class='ltch-aside-menu-bottom-submenu-item-wrapper']/li[1]/a[1]"))).click()
+        for i in range(600):
+            try:
+                element = driver.find_element(By.XPATH, "(//span[@class='aside__menu__bottom__submenu__item__icon'])[3]")
+                if element.is_displayed():
+                    print(f"Element is displayed in iteration {i}")
+                else:
+                    print(f"Element is not displayed in iteration {i}")
         time.sleep(15)
         print("Ending the test........")
 
