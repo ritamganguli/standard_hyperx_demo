@@ -166,12 +166,14 @@ class FirstSampleTest(unittest.TestCase):
         print("Starting manual session of emulator...")
         time.sleep(45)
 
-        end_virtual_mobile_session = self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='End Session']")))
-        driver.execute_script("arguments[0].click();", end_virtual_mobile_session)
+        driver.navigate().back()
+
+        # end_virtual_mobile_session = self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='End Session']")))
+        # driver.execute_script("arguments[0].click();", end_virtual_mobile_session)
         print("Ending session")
 
-        confirm_end_virtual_mobile_session = self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Yes, End Session']")))
-        driver.execute_script("arguments[0].click();", confirm_end_virtual_mobile_session)
+        # confirm_end_virtual_mobile_session = self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Yes, End Session']")))
+        # driver.execute_script("arguments[0].click();", confirm_end_virtual_mobile_session)
         print("Exiting from the device")
 
         main_page = self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='aside__menu__link aside__menu__link__anchor']")))
