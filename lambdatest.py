@@ -40,7 +40,7 @@ class FirstSampleTest(unittest.TestCase):
             ),
             options=options,
         )
-        self.wait = WebDriverWait(self.driver, 20)
+        self.wait = WebDriverWait(self.driver, 40)  # Increased timeout
 
     def test_demo_site(self):
         driver = self.driver
@@ -64,121 +64,147 @@ class FirstSampleTest(unittest.TestCase):
         time.sleep(35)
 
         print("Going over to a real-time session")
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[2]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[2]")))
         driver.execute_script("document.querySelector('#left_sidebar_header-items nav ul li:nth-child(2)').click();")
         time.sleep(20)
 
         print("Selecting browser_version")
+        self.wait.until(EC.presence_of_element_located((By.ID, 'version_126')))
         self.wait.until(EC.element_to_be_clickable((By.ID, 'version_126')))
         driver.execute_script("document.getElementById('version_126').click();")
         time.sleep(10)
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Start']/parent::span/parent::button")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Start']/parent::span/parent::button")))
         driver.execute_script("document.querySelector('span:textContains(Start)').parentElement.click();")
         print("Starting a manual desktop session")
         time.sleep(15)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "(//div[@class='aside__menu__link aside__menu__link__anchor_new'])[13]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//div[@class='aside__menu__link aside__menu__link__anchor_new'])[13]")))
         driver.execute_script("document.querySelectorAll('.aside__menu__link__anchor_new')[12].click();")
         time.sleep(30)
 
         print("Closing the real-time desktop session")
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Yes, End Session']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Yes, End Session']")))
         driver.execute_script("document.querySelector('span:textContains(Yes, End Session)').click();")
         time.sleep(30)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "(//span[text()='Virtual Mobile'])[1]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[text()='Virtual Mobile'])[1]")))
         driver.execute_script("document.querySelector('span:textContains(Virtual Mobile)').click();")
         print("Trying manual session over simulator/browser")
         time.sleep(20)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//input[@type='text']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//input[@type='text']")))
         driver.execute_script("document.querySelector('input[type=text]').click();")
         time.sleep(10)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Start']/parent::span/parent::button")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Start']/parent::span/parent::button")))
         driver.execute_script("document.querySelector('span:textContains(Start)').parentElement.click();")
         print("Starting manual session of emulator...")
         time.sleep(45)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "(//span[text()='End Session'])[1]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[text()='End Session'])[1]")))
         driver.execute_script("document.querySelector('span:textContains(End Session)').click();")
         print("Ending session")
         
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Yes, End Session']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Yes, End Session']")))
         driver.execute_script("document.querySelector('span:textContains(Yes, End Session)').click();")
         print("Exiting from the device")
         
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='aside__menu__link aside__menu__link__anchor']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='aside__menu__link aside__menu__link__anchor']")))
         driver.execute_script("document.querySelector('.aside__menu__link__anchor').click();")
         print("Going back to the main page")
         time.sleep(20)
 
         print("Picking up real device")
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[3]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[3]")))
         driver.execute_script("document.querySelector('#left_sidebar_header-items nav ul li:nth-child(3)').click();")
         time.sleep(60)
 
         print("Starting session over android real device")
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Start']/parent::span/parent::span/parent::button")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Start']/parent::span/parent::span/parent::button")))
         driver.execute_script("document.querySelector('span:textContains(Start)').parentElement.click();")
         time.sleep(30)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "(//span[text()='End Session'])[1]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[text()='End Session'])[1]")))
         driver.execute_script("document.querySelector('span:textContains(End Session)').click();")
         print("Ending session")
         
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Yes, End Session']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Yes, End Session']")))
         driver.execute_script("document.querySelector('span:textContains(Yes, End Session)').click();")
         print("Ended the session")
         time.sleep(30)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='osSelectorHeader flex']/div/span[2]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='osSelectorHeader flex']/div/span[2]")))
         driver.execute_script("document.querySelector('.osSelectorHeader .flex span:nth-child(2)').click();")
         print("Selected ios device")
         time.sleep(10)
 
         print("Starting session over ios real device")
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Start']/parent::span/parent::span/parent::button")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Start']/parent::span/parent::span/parent::button")))
         driver.execute_script("document.querySelector('span:textContains(Start)').parentElement.click();")
         time.sleep(60)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "(//span[text()='End Session'])[1]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[text()='End Session'])[1]")))
         driver.execute_script("document.querySelector('span:textContains(End Session)').click();")
         print("Ending session")
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//span[text()='Yes, End Session']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[text()='Yes, End Session']")))
         driver.execute_script("document.querySelector('span:textContains(Yes, End Session)').click();")
         print("Ended the session")
         time.sleep(30)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='aside__menu__link aside__menu__link__anchor']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='aside__menu__link aside__menu__link__anchor']")))
         driver.execute_script("document.querySelector('.aside__menu__link__anchor').click();")
         print("Going back to the main page")
         time.sleep(15)
 
         print("Going to automation")
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[4]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[4]")))
         driver.execute_script("document.querySelector('#left_sidebar_header-items nav ul li:nth-child(4)').click();")
         time.sleep(25)
 
         print("Currently inside web automation")
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[4]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[4]")))
         driver.execute_script("document.querySelector('#left_sidebar_header-items nav ul li:nth-child(4)').click();")
         print("Now going to app automation")
         
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "(//span[text()='App Automation'])[1]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[text()='App Automation'])[1]")))
         driver.execute_script("document.querySelector('span:textContains(App Automation)').click();")
         time.sleep(15)
         
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@class='aside__menu__link aside__menu__link__anchor']")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@class='aside__menu__link aside__menu__link__anchor']")))
         driver.execute_script("document.querySelector('.aside__menu__link__anchor').click();")
         print("Going back to the main page")
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[9]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[9]")))
         driver.execute_script("document.querySelector('#left_sidebar_header-items nav ul li:nth-child(9)').click();")
         print("Going over more tools")
         time.sleep(20)
         
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "(//span[@class='aside__menu__bottom__submenu__item__icon'])[3]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "(//span[@class='aside__menu__bottom__submenu__item__icon'])[3]")))
         driver.execute_script("document.querySelectorAll('.aside__menu__bottom__submenu__item__icon')[2].click();")
         
@@ -195,6 +221,7 @@ class FirstSampleTest(unittest.TestCase):
         print("Going over integration")
         time.sleep(10)
 
+        self.wait.until(EC.presence_of_element_located((By.XPATH, "//ul[@class='ltch-aside-menu-bottom-submenu-item-wrapper']/li[1]/a[1]")))
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//ul[@class='ltch-aside-menu-bottom-submenu-item-wrapper']/li[1]/a[1]")))
         driver.execute_script("document.querySelector('.ltch-aside-menu-bottom-submenu-item-wrapper li a').click();")
         time.sleep(30)
