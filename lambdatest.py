@@ -148,6 +148,13 @@ class FirstSampleTest(unittest.TestCase):
         print("Going over more tools")
         time.sleep(20)
         driver.find_element(By.XPATH,"(//span[@class='aside__menu__bottom__submenu__item__icon'])[3]").click()
+        for i in range(600):
+            try:
+                element = driver.find_element(By.XPATH, "(//span[@class='aside__menu__bottom__submenu__item__icon'])[3]")
+                if element.is_displayed():
+                    print(f"Element is displayed in iteration {i}")
+                else:
+                    print(f"Element is not displayed in iteration {i}")
         print("Going over integration")
         time.sleep(10)
         driver.find_element(By.XPATH,"//ul[@class='ltch-aside-menu-bottom-submenu-item-wrapper']/li[1]/a[1]").click()
