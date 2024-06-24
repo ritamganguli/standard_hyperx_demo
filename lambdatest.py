@@ -9,7 +9,7 @@ username = os.getenv("LT_USERNAME")  # Replace the username
 access_key = os.getenv("LT_ACCESS_KEY")  # Replace the access key
 sign_in_mail=os.getenv("sign_in_mail")
 password=os.getenv("password")
-
+build=os.getenv("LT_BUILD_NAME")
 # username = "shubhamr"  # Replace the username
 # access_key = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"  # Replace the access key
 
@@ -25,7 +25,7 @@ lt_options["accessKey"] = access_key
 lt_options["video"] = True
 lt_options["resolution"] = "1920x1080"
 lt_options["network"] = True
-lt_options["build"] = "test_build"
+lt_options["build"] = build
 lt_options["project"] = "unit_testing"
 lt_options["smartUI.project"] = "test"
 lt_options["name"] = "basic_unit_selinium"
