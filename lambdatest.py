@@ -25,6 +25,7 @@ lt_options["accessKey"] = access_key
 lt_options["video"] = True
 lt_options["resolution"] = "1920x1080"
 lt_options["network"] = True
+lt_options["smartWait]= 60
 lt_options["build"] = build
 lt_options["project"] = "unit_testing"
 lt_options["name"] = "basic_unit_selinium"
