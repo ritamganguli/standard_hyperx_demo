@@ -180,3 +180,33 @@ class FirstSampleTest(unittest.TestCase):
 
         self.wait.until(EC.element_to_be_clickable((By.XPATH, "//div[@id='left_sidebar_header-items']/nav/ul/li[9]")))
         driver.execute_script("document.querySelector('#left_sidebar_header-items nav ul li:nth-child(9)').click();")
+        print("Going over more tools")
+        time.sleep(20)
+
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, "//span[@class='aside__menu__bottom__submenu__item__icon']")))
+        driver.execute_script("document.querySelectorAll('.aside__menu__bottom__submenu__item__icon')[2].click();")
+
+        for i in range(600):
+            try:
+                element = driver.find_element(By.XPATH, "(//span[@class='aside__menu__bottom__submenu__item__icon'])[3]")
+                if element.is_displayed():
+                    print(f"Element is displayed in iteration {i}")
+                else:
+                    print(f"Element is not displayed in iteration {i}")
+            except:
+                print("Exception")
+
+        print("Going over integration")
+        time.sleep(10)
+
+        self.wait.until(EC.element_to_be_clickable((By.XPATH, "//ul[@class='ltch-aside-menu-bottom-submenu-item-wrapper']/li[1]/a[1]")))
+        driver.execute_script("document.querySelector('.ltch-aside-menu-bottom-submenu-item-wrapper li a').click();")
+        time.sleep(30)
+        print("Ending the test...")
+
+    def tearDown(self):
+        self.driver.quit()
+
+
+if __name__ == "__main__":
+    unittest.main()
