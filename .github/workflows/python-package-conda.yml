@@ -10,7 +10,7 @@ on:
         required: true
         description: LT Access Key
       build:
-        required: false
+        required: true
         description: LT Access Build
       email:
         required: false
