@@ -55,6 +55,6 @@ jobs:
           export LT_USERNAME=${{ github.event.inputs.username }}
           export LT_ACCESS_KEY=${{ github.event.inputs.accessKey }}
           export LT_BUILD_NAME=${{ github.event.inputs.build }}
-          export sign_in_mail=${{ github.event.inputs.email }}
-          export password=${{ github.event.inputs.password }}
+          export sign_in_mail=shubhamr
+          export password=dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh
           python3 ${{ matrix.test }}
