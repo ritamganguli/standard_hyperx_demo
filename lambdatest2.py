@@ -44,7 +44,6 @@ class FirstSampleTest(unittest.TestCase):
             options=options,
         )
         # Set the viewport size to 375x812
-        self.driver.set_window_size(375, 812)
 
     def test_demo_site(self):
         driver = self.driver
@@ -53,6 +52,7 @@ class FirstSampleTest(unittest.TestCase):
 
         print("Loading URL")
         driver.get("https://accounts.lambdatest.com/login")
+        driver.set_window_size(375, 812)
 
         time.sleep(15)
         print("Entering Mail To Log in")
