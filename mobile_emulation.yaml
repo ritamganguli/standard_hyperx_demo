@@ -4,7 +4,7 @@ globalTimeout: 90
 testSuiteTimeout: 90
 testSuiteStep: 90
 
-runson: win11
+runson: mac13
 
 autosplit: true
 
@@ -22,7 +22,7 @@ differentialUpload:
 
 env:
 #  PAT: ${{ .secrets.testKey }}
- TARGET_OS: Windows 11
+ # TARGET_OS: Windows 11
  LT_BUILD_NAME: ${LT_BUILD_NAME}
  sign_in_mail: ${sign_in_mail}
  password: ${password}
