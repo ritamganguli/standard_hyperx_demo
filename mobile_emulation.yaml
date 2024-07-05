@@ -8,7 +8,7 @@ runson: win11
 
 autosplit: true
 
-concurrency: 5
+concurrency: 1
 
 runtime:
   language: python 
@@ -36,7 +36,7 @@ pre:
 testDiscovery:
   type: raw
   mode: dynamic
-  command: type testDiscovery.txt
+  command: echo lambadtest2.py
 
 testRunnerCommand: python3 $test
 
