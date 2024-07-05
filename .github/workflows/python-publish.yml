@@ -1,4 +1,4 @@
-name: Run On HyperX With Build
+name: Mobile_Emulation
 on:
   workflow_dispatch:
     inputs:
