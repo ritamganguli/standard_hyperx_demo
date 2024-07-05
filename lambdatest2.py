@@ -18,7 +18,7 @@ mobile_emulation = {
 
 options = ChromeOptions()
 options.browser_version = "latest"
-options.platform_name = "win10"
+options.platform_name = "macOS Sonoma"
 lt_options = {}
 lt_options["username"] = username
 lt_options["accessKey"] = access_key
