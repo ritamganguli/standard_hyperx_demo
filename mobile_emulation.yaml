@@ -1,0 +1,43 @@
+---
+version: 0.1
+globalTimeout: 90
+testSuiteTimeout: 90
+testSuiteStep: 90
+
+runson: win11
+
+autosplit: true
+
+concurrency: 5
+
+runtime:
+  language: python 
+  version: "3.9"
+
+project:
+  name: demo_Testing
+differentialUpload:
+  enabled: true
+  ttlHours: 360
+
+env:
+#  PAT: ${{ .secrets.testKey }}
+ TARGET_OS: Windows 11
+ LT_BUILD_NAME: ${LT_BUILD_NAME}
+ sign_in_mail: ${sign_in_mail}
+ password: ${password}
+
+cacheKey: '{{ checksum "requirements.txt" }}'
+cacheDirectories:
+  - CacheDir
+pre:
+  - pip3 install -r requirements.txt --cache-dir CacheDir
+
+testDiscovery:
+  type: raw
+  mode: dynamic
+  command: type testDiscovery.txt
+
+testRunnerCommand: python3 $test
+
+jobLabel: [selenium-python, win, autosplit]
