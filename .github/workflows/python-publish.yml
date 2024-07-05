@@ -30,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [mac13]
+        os: [windows-latest]
 
     steps:
       - name: Checkout sources
