@@ -5,8 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
-username = "ritamg"
-access_key = "rHlWAXMXwdXDlfujWQHbls73WqW9Nri5rkDk5kXdonseHMsPFL"
+username = "Shubhamr"
+access_key = "C2ezVpIFSTbQQB83sn85p06S5Fatn0OiDHcdDaCKo8uFNnk5mV"
 sign_in_mail = "shubhamr@lambdatest.com"
 password = "Gmail@12345"
 build = os.getenv("LT_BUILD_NAME")
