@@ -5,8 +5,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
-username = "Shubhamr"
-access_key = "C2ezVpIFSTbQQB83sn85p06S5Fatn0OiDHcdDaCKo8uFNnk5mV"
+username = "shubhamr"
+access_key = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"
 sign_in_mail = "shubhamr@lambdatest.com"
 password = "Gmail@12345"
 build = os.getenv("LT_BUILD_NAME")
@@ -38,7 +38,7 @@ class FirstSampleTest(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Remote(
-            command_executor="http://{}:{}@stage-hub.lambdatestinternal.com/wd/hub".format(
+            command_executor="http://{}:{}@hub.lambdatest.com/wd/hub".format(
                 username, access_key
             ),
             options=options,
