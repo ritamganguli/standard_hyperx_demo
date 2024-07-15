@@ -27,6 +27,7 @@ lt_options["build"] = build
 lt_options["project"] = "unit_testing"
 lt_options["name"] = "basic_unit_selenium"
 lt_options["w3c"] = True
+lt_options["console] = True
 lt_options["accessibility"] = True
 lt_options["lambdaMaskCommands"]=["setValues", "setCookies","getCookies"]
 lt_options["accessibility.wcagVersion"] = "wcag21a"
