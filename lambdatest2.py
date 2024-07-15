@@ -53,7 +53,7 @@ class FirstSampleTest(unittest.TestCase):
         print("Loading URL")
         driver.get("https://accounts.lambdatest.com/login")
         time.sleep(10)
-        driver.set_window_size(375, 812)
+        # driver.set_window_size(375, 812)
 
         time.sleep(15)
         print("Entering Mail To Log in")
