@@ -16,25 +16,27 @@ build = os.getenv("LT_BUILD_NAME")
 options = ChromeOptions()
 options.set_capability("platformName", "macOS Sonoma")
 
-lt_options = {}
-lt_options["username"] = username
-lt_options["accessKey"] = access_key
-lt_options["video"] = True
-lt_options["resolution"] = "1920x1080"
-lt_options["network"] = True
-lt_options["smartWait"] = 60
-lt_options["build"] = build
-lt_options["project"] = "unit_testing"
-lt_options["name"] = "basic_unit_selenium"
-lt_options["w3c"] = True
-lt_options["console"] = True
-lt_options["accessibility"] = True
-lt_options["lambdaMaskCommands"]=["setValues", "setCookies","getCookies"]
-capabilities["lambdaMaskCommands"]=["setValues", "setCookies","getCookies"]
-lt_options["accessibility.wcagVersion"] = "wcag21a"
-lt_options["accessibility.needsReview"] = True
-lt_options["plugin"] = "python-python"
-options.set_capability("LT:Options", lt_options)
+capabilities = {
+    "username": username,
+    "accessKey": access_key,
+    "video": True,
+    "resolution": "1920x1080",
+    "network": True,
+    "smartWait": 60,
+    "build": build,
+    "project": "unit_testing",
+    "name": "basic_unit_selenium",
+    "w3c": True,
+    "console": True,
+    "accessibility": True,
+    "lambdaMaskCommands": ["setValues", "setCookies", "getCookies"],
+    "accessibility.wcagVersion": "wcag21a",
+    "accessibility.needsReview": True,
+    "plugin": "python-python"
+}
+
+for key, value in lt_options.items():
+    options.set_capability("LT:Options", {key: value})
 
 class FirstSampleTest(unittest.TestCase):
     driver = None
@@ -44,7 +46,7 @@ class FirstSampleTest(unittest.TestCase):
             command_executor="http://{}:{}@hub.lambdatest.com/wd/hub".format(
                 username, access_key
             ),
-            options=options,
+            desired_capabilities=options.to_capabilities()
         )
         # Set the viewport size to 375x812
 
