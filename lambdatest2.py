@@ -30,6 +30,7 @@ lt_options["w3c"] = True
 lt_options["console"] = True
 lt_options["accessibility"] = True
 lt_options["lambdaMaskCommands"]=["setValues", "setCookies","getCookies"]
+capabilities["lambdaMaskCommands"]=["setValues", "setCookies","getCookies"]
 lt_options["accessibility.wcagVersion"] = "wcag21a"
 lt_options["accessibility.needsReview"] = True
 lt_options["plugin"] = "python-python"
