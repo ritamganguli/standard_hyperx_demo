@@ -28,6 +28,7 @@ lt_options["project"] = "unit_testing"
 lt_options["name"] = "basic_unit_selenium"
 lt_options["w3c"] = True
 lt_options["accessibility"] = True
+lt_options["lambdaMaskCommands"]=["requestBody"]
 lt_options["accessibility.wcagVersion"] = "wcag21a"
 lt_options["accessibility.needsReview"] = True
 lt_options["plugin"] = "python-python"
