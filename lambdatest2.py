@@ -57,6 +57,7 @@ class FirstSampleTest(unittest.TestCase):
 
         time.sleep(15)
         print("Entering Mail To Log in")
+        driver.add_cookie({"name": "example_cookie", "value": "cookie_value"})
         driver.find_element(By.ID, "email").send_keys(sign_in_mail)
         time.sleep(7)
         print("Entering Password")
