@@ -33,7 +33,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         python-version: [3.9]  # Specify Python 3.9 version
-        test: ["lambdatest.py","lambdatest.py","lambdatest.py","lambdatest.py","lambdatest.py"]  # Include the test names in the matrix
+        test: ["lambdatest.py","lambdatest.py","lambdatest.py"]  # Include the test names in the matrix
 
     steps:
       - name: Checkout sources
