@@ -63,7 +63,6 @@ class FirstSampleTest(unittest.TestCase):
             "https://egift.laura.ca/gifter/digital"
         )
         driver.maximize_window()
-        time.sleep(2)
         driver.execute_script("smartui.takeFullPageScreenshot=Ritam1")
         time.sleep(30)
 
