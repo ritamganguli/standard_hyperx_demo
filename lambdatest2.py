@@ -19,7 +19,7 @@ lt_options = {
     "network": True,
     "build": "test_build",
     "project": "unit_testing",
-    "smartUI.project": "stemcell_trail_2",
+    "smartUI.project": "stemcell_trail_final",
     "selenium_version": "4.0.0",
     "w3c": True,
     "plugin": "python-python"
