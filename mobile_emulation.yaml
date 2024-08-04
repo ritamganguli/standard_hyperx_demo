@@ -8,7 +8,7 @@ runson: win11
 
 autosplit: true
 
-concurrency: 10
+concurrency: 1
 
 runtime:
   language: python 
