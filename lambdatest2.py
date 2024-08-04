@@ -47,7 +47,7 @@ class FirstSampleTest(unittest.TestCase):
         driver.get("https://www.stemcell.com/")
         driver.maximize_window()
         time.sleep(10)
-        button = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/button")
+        button = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/button[2]")
         button.click()
 
         # Scroll to specific coordinates
