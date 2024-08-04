@@ -1,6 +1,7 @@
 import unittest
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.common.by import By
 import time
 
 username = "shubhamr"  # Replace with your username
@@ -45,11 +46,15 @@ class FirstSampleTest(unittest.TestCase):
         print("Loading URL")
         driver.get("https://www.stemcell.com/")
         driver.maximize_window()
+        time.sleep(10)
+        button = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/button")
+        button.click()
 
         # Scroll to specific coordinates
         driver.execute_script("window.scrollTo(63, 1566)")
 
         # Execute SmartUI screenshot
+        time.sleep(30)
         driver.execute_script("smartui.takeFullPageScreenshot='Ritam1'")
         time.sleep(30)
 
