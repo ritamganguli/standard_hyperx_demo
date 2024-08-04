@@ -50,4 +50,4 @@ jobs:
           export LT_BUILD_NAME=${{ github.event.inputs.build }}
           export sign_in_mail=${{ secrets.LT_EMAIL }}
           export password=${{ secrets.PASS }}
-          ./hyperexecute --user gchawhan10 --key e0LlLtwPOwFxS1RcCyuenLu8vmO6Xpl3vO0Ppx4lNqiAuQBPYU --config mobile_emulation.yaml
+          ./hyperexecute --user shubhamr --key dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh --config mobile_emulation.yaml
