@@ -1,75 +1,60 @@
 import unittest
-import os
 from selenium import webdriver
-from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 import time
 
-username = "gchawhan10"  # Replace the username
-access_key = "e0LlLtwPOwFxS1RcCyuenLu8vmO6Xpl3vO0Ppx4lNqiAuQBPYU"  # Replace the access key
+username = "shubhamr"  # Replace with your username
+access_key = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"  # Replace with your access key
 
-
-# paste your capibility options below
-
+# Setting up the Chrome options and LambdaTest capabilities
 options = ChromeOptions()
 options.browser_version = "126.0"
 options.platform_name = "win11"
-lt_options = {}
-lt_options["username"] = username
-lt_options["accessKey"] = access_key
-lt_options["video"] = True
-lt_options["resolution"] = "1920x1080"
-lt_options["network"] = True
-lt_options["build"] = "test_build"
-lt_options["project"] = "unit_testing"
-lt_options["smartUI.project"] = "test"
-lt_options["name"] = "basic_unit_selinium"
-lt_options["smartUI.project"] = "egifter_lambdatest";
-lt_options["selenium_version"]="4.0.0"
-lt_options["w3c"] = True
-lt_options["plugin"] = "python-python"
+
+lt_options = {
+    "username": username,
+    "accessKey": access_key,
+    "video": True,
+    "resolution": "1920x1080",
+    "network": True,
+    "build": "test_build",
+    "project": "unit_testing",
+    "smartUI.project": "egifter_lambdatest",
+    "selenium_version": "4.0.0",
+    "w3c": True,
+    "plugin": "python-python"
+}
+
 options.set_capability("LT:Options", lt_options)
 
-
-# Steps to run Smart UI project (https://beta-smartui.lambdatest.com/)
-# Step - 1 : Change the hub URL to @beta-smartui-hub.lambdatest.com/wd/hub
-# Step - 2 : Add "smartUI.project": "<Project Name>" as a capability above
-# Step - 3 : Run "driver.execute_script("smartui.takeScreenshot")" command wherever you need to take a screenshot
-# Note: for additional capabilities navigate to https://www.lambdatest.com/support/docs/test-settings-options/
-
-
+# Define the test case class
 class FirstSampleTest(unittest.TestCase):
-    driver = None
-
     def setUp(self):
         self.driver = webdriver.Remote(
-            command_executor="http://{}:{}@hub.lambdatest.com/wd/hub".format(
-                username, access_key
-            ),
-            options=options,
+            command_executor=f"http://{username}:{access_key}@hub.lambdatest.com/wd/hub",
+            options=options
         )
 
-    # """ You can write the test cases here """
     def test_demo_site(self):
-        # try:
         driver = self.driver
         driver.implicitly_wait(10)
         driver.set_page_load_timeout(30)
         driver.set_window_size(1920, 1080)
 
-        # Url
+        # Load URL
         print("Loading URL")
-        driver.get(
-            "https://egift.laura.ca/gifter/digital"
-        )
+        driver.get("https://egift.laura.ca/gifter/digital")
         driver.maximize_window()
-        driver.execute_script("smartui.takeFullPageScreenshot=Ritam1")
+
+        # Scroll to specific coordinates
+        driver.execute_script("window.scrollTo(63, 1566)")
+
+        # Execute SmartUI screenshot
+        driver.execute_script("smartui.takeFullPageScreenshot='Ritam1'")
         time.sleep(30)
 
-    # tearDown runs after each test case
     def tearDown(self):
         self.driver.quit()
-
 
 if __name__ == "__main__":
     unittest.main()
