@@ -19,7 +19,7 @@ lt_options = {
     "network": True,
     "build": "test_build",
     "project": "unit_testing",
-    "smartUI.project": "stemcell_trail_1",
+    "smartUI.project": "stemcell_trail_2",
     "selenium_version": "4.0.0",
     "w3c": True,
     "plugin": "python-python"
@@ -43,7 +43,7 @@ class FirstSampleTest(unittest.TestCase):
 
         # Load URL
         print("Loading URL")
-        driver.get("https://egift.laura.ca/gifter/digital")
+        driver.get("https://www.stemcell.com/")
         driver.maximize_window()
 
         # Scroll to specific coordinates
