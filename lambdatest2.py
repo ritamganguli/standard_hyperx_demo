@@ -55,7 +55,10 @@ class FirstSampleTest(unittest.TestCase):
 
         # Execute SmartUI screenshot
         time.sleep(30)
-        driver.execute_script("smartui.takeFullPageScreenshot='Ritam1'")
+        config = {
+          'screenshotName': 'Ritam1'
+        }
+        driver.execute_script("smartui.takeScreenshot", config)
         time.sleep(30)
 
     def tearDown(self):
