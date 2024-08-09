@@ -20,7 +20,7 @@ lt_options = {
     "network": True,
     "build": "test_build",
     "project": "unit_testing",
-    "smartUI.project": "stemcell_trail_final",
+    "smartUI.project": "Dalbiiiiiiiir",
     "selenium_version": "4.0.0",
     "w3c": True,
     "plugin": "python-python"
@@ -38,27 +38,19 @@ class FirstSampleTest(unittest.TestCase):
 
     def test_demo_site(self):
         driver = self.driver
-        driver.implicitly_wait(10)
-        driver.set_page_load_timeout(30)
-        driver.set_window_size(1920, 1080)
-
-        # Load URL
-        print("Loading URL")
-        driver.get("https://www.stemcell.com/")
         driver.maximize_window()
-        time.sleep(10)
-        button = driver.find_element(By.XPATH, "/html/body/div[1]/div[2]/div[2]/button[2]")
-        button.click()
+        driver.get("https://egift.laura.ca/gifter/digital")
 
-        # Scroll to specific coordinates
-        driver.execute_script("window.scrollTo(63, 1566)")
-
-        # Execute SmartUI screenshot
-        time.sleep(30)
-        config = {
-          'screenshotName': 'Ritam1'
-        }
-        driver.execute_script("smartui.takeScreenshot", config)
+        # Execute JavaScript to get the zoom level
+        zoom_level = driver.execute_script("return window.devicePixelRatio;")
+        
+        # Assert that zoom level is either 2 or 1
+        self.assertIn(zoom_level, [1, 2], f"Zoom level is {zoom_level}, expected 1 or 2")
+        
+        # Take a full-page screenshot with Smart UI
+        driver.execute_script("smartui.takeFullPageScreenshot=Dalbir1")
+        
+        # Wait for 30 seconds to capture any asynchronous processes
         time.sleep(30)
 
     def tearDown(self):
