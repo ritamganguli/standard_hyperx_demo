@@ -49,6 +49,8 @@ class FirstSampleTest(unittest.TestCase):
         
         # Take a full-page screenshot with Smart UI
         driver.execute_script("smartui.takeFullPageScreenshot=Dalbir1")
+
+        self.assertIn(zoom_level, [1, 2], f"Zoom level is {zoom_level}, expected 1 or 2")
         
         # Wait for 30 seconds to capture any asynchronous processes
         time.sleep(30)
