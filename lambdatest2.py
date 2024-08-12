@@ -43,14 +43,16 @@ class FirstSampleTest(unittest.TestCase):
 
         # Execute JavaScript to get the zoom level
         zoom_level = driver.execute_script("return window.devicePixelRatio;")
+
+        print(zoom_level)
         
         # Assert that zoom level is either 2 or 1
-        self.assertIn(zoom_level, [1, 2], f"Zoom level is {zoom_level}, expected 1 or 2")
+        self.assertIn(zoom_level, [1], f"Zoom level is {zoom_level}, expected 1 or 2")
         
         # Take a full-page screenshot with Smart UI
         driver.execute_script("smartui.takeFullPageScreenshot=Dalbir1")
 
-        self.assertIn(zoom_level, [1, 2], f"Zoom level is {zoom_level}, expected 1 or 2")
+        self.assertIn(zoom_level, [1], f"Zoom level is {zoom_level}, expected 1 or 2")
         
         # Wait for 30 seconds to capture any asynchronous processes
         time.sleep(30)
