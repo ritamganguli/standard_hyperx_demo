@@ -4,8 +4,8 @@ from selenium.webdriver.chrome.options import Options as ChromeOptions
 from selenium.webdriver.common.by import By
 import time
 
-username = "gchawhan10"  # Replace with your username
-access_key = "e0LlLtwPOwFxS1RcCyuenLu8vmO6Xpl3vO0Ppx4lNqiAuQBPYU"  # Replace with your access key
+username = "shubhamr"  # Replace with your username
+access_key = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"  # Replace with your access key
 
 # Setting up the Chrome options and LambdaTest capabilities
 options = ChromeOptions()
