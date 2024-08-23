@@ -51,3 +51,4 @@ jobs:
           export sign_in_mail=johnwick190501@gmail.com
           export password=johnwick@lambdatest
           ./hyperexecute --user $LT_USERNAME --key $LT_ACCESS_KEY --config testrunner.yaml
+          ls -la
