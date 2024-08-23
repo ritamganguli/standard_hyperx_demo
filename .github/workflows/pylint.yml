@@ -50,11 +50,17 @@ jobs:
           export sign_in_mail=johnwick190501@gmail.com
           export password=johnwick@lambdatest
           ./hyperexecute --user $LT_USERNAME --key $LT_ACCESS_KEY --config testrunner.yaml
+          cd logs
           ls -la
 
-      - name: Upload log folder
-        uses: actions/upload-artifact@v3
-        with:
-          name: hyperexecute-logs
-          path: ./logs/  # Assuming the logs are in a folder named "logs" at the root directory
-          retention-days: 30  # Retain for 30 days
+      - name: Verify and cat all files inside logs
+        run: |
+          cd logs
+          echo "Listing all files in the logs directory:"
+          ls -la
+          echo "Displaying contents of all files inside logs:"
+          for file in *; do
+            echo "Content of $file:"
+            cat "$file"
+            echo "--------------------------------"
+          done
