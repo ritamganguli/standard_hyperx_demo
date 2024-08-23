@@ -6,6 +6,8 @@ testSuiteStep: 90
 
 runson: win11
 
+tunnel: true
+
 autosplit: true
 
 concurrency: 3
