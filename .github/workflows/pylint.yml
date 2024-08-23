@@ -13,11 +13,10 @@ on:
         required: true
       email:
         required: false
-        description: LT singup mail
+        description: LT signup mail
       password:
         required: false
         description: LT signup password
-      
       sampleRepoLink:
         required: false
         default: https://github.com/ritamganguli/standard_hyperx_demo.git
@@ -40,7 +39,7 @@ jobs:
         id: testng
         shell: bash
         run: |
-          echo "STEP 1 ) Downloading sample suite"
+          echo "STEP 1) Downloading sample suite"
           git clone ${{ github.event.inputs.sampleRepoLink }}
           echo "STEP 2) Download CLI and setting environment variables"
           cd standard_hyperx_demo
@@ -52,3 +51,10 @@ jobs:
           export password=johnwick@lambdatest
           ./hyperexecute --user $LT_USERNAME --key $LT_ACCESS_KEY --config testrunner.yaml
           ls -la
+
+      - name: Upload log folder
+        uses: actions/upload-artifact@v3
+        with:
+          name: hyperexecute-logs
+          path: ./logs/  # Assuming the logs are in a folder named "logs" at the root directory
+          retention-days: 30  # Retain for 30 days
