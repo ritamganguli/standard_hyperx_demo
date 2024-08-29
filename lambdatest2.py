@@ -5,16 +5,16 @@ from selenium.webdriver.common.by import By
 import time
 
 # Replace with your LambdaTest credentials
-username = "shubhamr"
-access_key = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"
+username = "gchawhan10"
+access_key = "e0LlLtwPOwFxS1RcCyuenLu8vmO6Xpl3vO0Ppx4lNqiAuQBPYU"
 
 # Set up Chrome options and LambdaTest capabilities
 options = ChromeOptions()
 
 lt_options = {
-    "browserName": "Chrome",
-    "browserVersion": "126.0",
-    "platformName": "Windows 11",
+    "browserName": "MicrosoftEdge",
+    "browserVersion": "beta",
+    "platformName": "Windows 10",
     "username": username,
     "accessKey": access_key,
     "video": True,
@@ -24,6 +24,7 @@ lt_options = {
     "project": "unit_testing",
     "smartUI.project": "Dalbiiiiiiiir",
     "selenium_version": "4.0.0",
+    "tunnel": True,
     "w3c": True,
     "plugin": "python-python"
 }
@@ -48,9 +49,7 @@ class FirstSampleTest(unittest.TestCase):
         
         # Click the link to download the PDF
         driver.find_element(By.XPATH, "//a[text()='sample.pdf']").click()
-        time.sleep(10)  # Wait for the download to complete
-        driver.get("C://Users//ltuser.ghtestVM//Downloads//sample.pdf")
-        time.sleep(10)
+        time.sleep(1000000000000)  # Wait for the download to complete
 
     def tearDown(self):
         # Close the browser session
@@ -58,5 +57,3 @@ class FirstSampleTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-
-# //a[text()='sample.pdf']
