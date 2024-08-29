@@ -50,7 +50,7 @@ class FirstSampleTest(unittest.TestCase):
         driver.find_element(By.XPATH, "//a[text()='sample.pdf']").click()
         time.sleep(10)  # Wait for the download to complete
         driver.get("C://Users//ltuser//Downloads//sample.pdf")
-        time.sleep(15)
+        time.sleep(1000000000000)
 
     def tearDown(self):
         # Close the browser session
