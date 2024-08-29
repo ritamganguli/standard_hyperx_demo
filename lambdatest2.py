@@ -49,7 +49,7 @@ class FirstSampleTest(unittest.TestCase):
         # Click the link to download the PDF
         driver.find_element(By.XPATH, "//a[text()='sample.pdf']").click()
         time.sleep(10)  # Wait for the download to complete
-        driver.get("C:\Users\ltuser.ghtestVM\Downloads")
+        driver.get("C://Users//ltuser//Downloads//sample.pdf")
         time.sleep(15)
 
     def tearDown(self):
@@ -58,3 +58,5 @@ class FirstSampleTest(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+# //a[text()='sample.pdf']
