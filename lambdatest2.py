@@ -13,7 +13,7 @@ options = ChromeOptions()
 
 lt_options = {
     "browserName": "MicrosoftEdge",
-    "browserVersion": "beta",
+    "browserVersion": "dev",
     "platformName": "Windows 10",
     "username": username,
     "accessKey": access_key,
