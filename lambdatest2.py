@@ -24,7 +24,6 @@ lt_options = {
     "project": "unit_testing",
     "smartUI.project": "Dalbiiiiiiiir",
     "selenium_version": "4.0.0",
-    "tunnel": True,
     "w3c": True,
     "plugin": "python-python"
 }
