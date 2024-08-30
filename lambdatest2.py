@@ -8,8 +8,8 @@ import time
 # username = "gchawhan10"
 # access_key = "e0LlLtwPOwFxS1RcCyuenLu8vmO6Xpl3vO0Ppx4lNqiAuQBPYU"
 
-username = "shubhamr"
-access_key = "dl8Y8as59i1YyGZZUeLF897aCFvIDmaKkUU1e6RgBmlgMLIIhh"
+username = "gchawhan10"
+access_key = "e0LlLtwPOwFxS1RcCyuenLu8vmO6Xpl3vO0Ppx4lNqiAuQBPYU"
 
 # Set up Chrome options and LambdaTest capabilities
 options = ChromeOptions()
