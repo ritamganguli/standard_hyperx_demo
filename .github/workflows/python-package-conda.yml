@@ -1,60 +1,60 @@
-name: Github Actions Standard Runner
+# name: Github Actions Standard Runner
 
-on:
-  workflow_dispatch:
-    inputs:
-      username:
-        required: true
-        description: LT Username
-      accessKey:
-        required: true
-        description: LT Access Key
-      build:
-        required: true
-        description: LT Access Build
-      email:
-        required: false
-        description: LT singup mail
-      password:
-        required: false
-        description: LT signup password
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       username:
+#         required: true
+#         description: LT Username
+#       accessKey:
+#         required: true
+#         description: LT Access Key
+#       build:
+#         required: true
+#         description: LT Access Build
+#       email:
+#         required: false
+#         description: LT singup mail
+#       password:
+#         required: false
+#         description: LT signup password
       
-      sampleRepoLink:
-        required: false
-        default: https://github.com/ritamganguli/standard_hyperx_demo.git
-        description: Link to the HyperExecute sample repo
+#       sampleRepoLink:
+#         required: false
+#         default: https://github.com/ritamganguli/standard_hyperx_demo.git
+#         description: Link to the HyperExecute sample repo
 
-jobs:
-  Standard-Selenium:
-    runs-on: ${{ matrix.os }}
-    timeout-minutes: 60
-    strategy:
-      fail-fast: false
-      matrix:
-        os: [ubuntu-latest]
-        python-version: [3.9]  # Specify Python 3.9 version
-        test: ["lambdatest.py","lambdatest.py","lambdatest.py"]  # Include the test names in the matrix
+# jobs:
+#   Standard-Selenium:
+#     runs-on: ${{ matrix.os }}
+#     timeout-minutes: 60
+#     strategy:
+#       fail-fast: false
+#       matrix:
+#         os: [ubuntu-latest]
+#         python-version: [3.9]  # Specify Python 3.9 version
+#         test: ["lambdatest.py","lambdatest.py","lambdatest.py"]  # Include the test names in the matrix
 
-    steps:
-      - name: Checkout sources
-        uses: actions/checkout@v2
+#     steps:
+#       - name: Checkout sources
+#         uses: actions/checkout@v2
 
-      - name: Set up Python 3.9
-        uses: actions/setup-python@v2
-        with:
-          python-version: 3.9
+#       - name: Set up Python 3.9
+#         uses: actions/setup-python@v2
+#         with:
+#           python-version: 3.9
 
-      - name: Starting CLI testing
-        id: testng
-        shell: bash
-        run: |
-          echo "STEP 1 ) Running up the python snippet over standard"
-          git clone ${{ github.event.inputs.sampleRepoLink }}
-          cd standard_hyperx_demo
-          pip3 install -r requirements.txt
-          export LT_USERNAME=${{ github.event.inputs.username }}
-          export LT_ACCESS_KEY=${{ github.event.inputs.accessKey }}
-          export LT_BUILD_NAME=${{ github.event.inputs.build }}
-          export sign_in_mail=johnwick190501@gmail.com
-          export password=johnwick@lambdatest
-          python3 ${{ matrix.test }}
+#       - name: Starting CLI testing
+#         id: testng
+#         shell: bash
+#         run: |
+#           echo "STEP 1 ) Running up the python snippet over standard"
+#           git clone ${{ github.event.inputs.sampleRepoLink }}
+#           cd standard_hyperx_demo
+#           pip3 install -r requirements.txt
+#           export LT_USERNAME=${{ github.event.inputs.username }}
+#           export LT_ACCESS_KEY=${{ github.event.inputs.accessKey }}
+#           export LT_BUILD_NAME=${{ github.event.inputs.build }}
+#           export sign_in_mail=johnwick190501@gmail.com
+#           export password=johnwick@lambdatest
+#           python3 ${{ matrix.test }}
