@@ -17,6 +17,7 @@ options.platform_name = "win10"
 lt_options = {}
 lt_options["username"] = username
 lt_options["accessKey"] = access_key
+lt-options["browserVersion"]="beta"
 lt_options["video"] = True
 lt_options["resolution"] = "1920x1080"
 lt_options["network"] = True
