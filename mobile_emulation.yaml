@@ -33,11 +33,19 @@ cacheDirectories:
 pre:
   - pip3 install -r requirements.txt --cache-dir CacheDir
 
+afterAll:
+  local:
+    commands:
+      - chmod +x cliLogs.sh
+      -  ./cliLogs.sh
+
 testDiscovery:
   type: raw
   mode: dynamic
   command: cat testDiscovery.txt
 
 testRunnerCommand: python3 $test
+
+
 
 jobLabel: [selenium-python, win, autosplit]
